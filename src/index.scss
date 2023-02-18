@@ -1,0 +1,529 @@
+// Primary colors.
+$DarkBlue: hsl(233, 26%, 24%);
+$LimeGreen: hsl(136, 65%, 51%);
+$BrightCyan: hsl(192, 70%, 51%);
+
+//  Neutral colors.
+$GrayishBlue: hsl(233, 8%, 62%);
+$LightGrayishBlue: hsl(220, 16%, 96%);
+$VeryLightGray: hsl(0, 0%, 98%);
+$White: hsl(0, 0%, 100%);
+$BoxShadowColor: hsl(233, 38%, 76%);
+
+$BtnGradientColor: linear-gradient(
+	88deg,
+	rgba(46, 209, 92, 1) 50%,
+	rgba(49, 205, 211, 1) 70%
+);
+
+// Font-family
+$PrimaryFont: 'Publis Sans', sans-serif;
+
+body,
+#root {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	box-sizing: border-box;
+	font-family: $PrimaryFont;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+// Navigation bar styles.
+.flex_container_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $White;
+	min-height: 10vh;
+	padding: 0 7% 0 7%;
+}
+
+.header__logo:hover {
+	cursor: default;
+}
+
+.invite_btn {
+	height: 50px;
+	background: $BtnGradientColor;
+	color: $White;
+	border-radius: 25px;
+	border: none;
+	text-align: center;
+	font-family: $PrimaryFont;
+}
+
+.invite_btn:hover {
+	cursor: pointer;
+}
+
+// Home and Main section styles.
+.home__section p,
+.main__section p,
+.articles__section p,
+.articles__section h5 {
+	line-height: 25px;
+	color: $GrayishBlue;
+	margin: 0;
+}
+
+.home__section {
+	background-color: $VeryLightGray;
+}
+
+.main__section,
+.articles__section,
+.home__section {
+	h1,
+	h3 {
+		color: $DarkBlue;
+		font-weight: 500;
+	}
+
+	h1 {
+		font-size: 35px;
+		margin: 0 0 20px 0;
+	}
+}
+
+.invite_btn {
+	width: 15vw;
+	font-size: 90%;
+	margin: 25px 0;
+}
+
+//**************************** Main Section Styles ***********************
+.main__section {
+	background-color: $LightGrayishBlue;
+}
+
+//*************************** Aticles Section Styles *********************
+.articles__section {
+	background-color: $VeryLightGray;
+
+	.articles__body {
+		margin: 0px 7%;
+
+		img {
+			width: 100%;
+			height: 15rem;
+			border-radius: 5px 5px 0 0;
+		}
+	}
+	.articles__body,
+	.articles__item {
+		display: flex;
+		flex-direction: column;
+	}
+	.articles__item {
+		background-color: $White;
+		margin-bottom: 25px;
+		gap: 12px;
+		padding-bottom: 12px;
+
+		h5,
+		h3,
+		p {
+			padding: 0 10%;
+		}
+	}
+}
+
+//**************************** Mobile Styles *****************************
+
+// Mobile navbar.
+@media screen and (max-width: 611px) {
+	// Navigation mobile styles.
+	.flex_container_header .nav_grid_container,
+	header .invite_btn,
+	.home_intro_image_desktop {
+		display: none;
+	}
+
+	.invite_btn {
+		width: 25vw;
+	}
+
+	.hamburger_menu_btn:hover {
+		cursor: pointer;
+	}
+
+	.flex_container_header .mobile-nav-active {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 11.5vh;
+		width: 86.4%;
+		position: absolute;
+		background: $White;
+		border-radius: 5px;
+		height: 90vw;
+		// box-shadow: 1px 20px 100px 100px $BoxShadowColor;
+		box-shadow: -4px 95px 46px 22px $BoxShadowColor;
+		-webkit-box-shadow: -4px 95px 46px 22px $BoxShadowColor;
+		-moz-box-shadow: -4px 95px 46px 22px $BoxShadowColor;
+
+		ul li {
+			margin: 10vw 0;
+			padding: 0;
+			opacity: 0;
+
+			a {
+				font-size: 1.2rem;
+				color: $DarkBlue;
+			}
+		}
+
+		ul {
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+
+		@keyframes navLinkFade {
+			from {
+				opacity: 0;
+				transform: translateX(50px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+		}
+	}
+
+	.nav_grid_container ul li a:hover {
+		color: $GrayishBlue;
+	}
+
+	.home__section,
+	.home_intro_div,
+	.main__section,
+	.main__body div,
+	.articles__body,
+	.articles__item {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// Home Section mobile styles.
+	.home__section,
+	.home_intro_div {
+		align-items: center;
+
+		.home_intro_image {
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.home_section_heading {
+			margin: 50px 0 0 0;
+			color: $DarkBlue;
+			font-size: 9vw;
+		}
+
+		p {
+			margin: 15px 7% 0 7%;
+			text-align: center;
+		}
+	}
+
+	// Main Section mobile styles
+	.main__body div {
+		align-items: center;
+		margin: 25px 7%;
+		gap: 12px;
+
+		p {
+			text-align: center;
+		}
+	}
+
+	// Main and Articles section mobile styles.
+	.main__intro,
+	.article__heading {
+		text-align: center;
+		padding: 50px 7% 35px 7%;
+	}
+
+	.main__section,
+	.articles__section {
+		h3,
+		h5 {
+			margin: 0;
+		}
+	}
+} // End of Mobile styles
+
+//******************** Desktop Styles ********************************
+
+// Desktop
+@media screen and (min-width: 611px) {
+	// Navbar
+	.hamburger_menu_btn,
+	.close_menu_btn {
+		display: none;
+	}
+
+	button,
+	.nav_list_items a {
+		width: auto;
+		font-weight: 350;
+		font-size: 1.5vw;
+	}
+
+	.flex_container_header .invite_btn {
+		margin: 0;
+	}
+
+	.nav_grid_container ul {
+		display: grid;
+		grid-template-columns: auto auto auto auto auto;
+		column-gap: 2vw;
+	}
+
+	.nav_grid_container ul {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+
+		li {
+			a {
+				display: flex;
+				align-items: center;
+				height: 9vh;
+				margin-top: 5px; // Compensate for top border.
+				border-bottom: 5px solid transparent;
+				color: $GrayishBlue;
+			}
+		}
+	}
+
+	.nav_grid_container ul li a:hover {
+		border-image: $BtnGradientColor;
+		border-image-slice: 1;
+		color: $DarkBlue;
+	}
+
+	// Home Section desktop styles.
+	.home__section .home_intro_image {
+		display: none;
+	}
+
+	.home__section {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		height: 320px;
+
+		p {
+			margin-right: 5%;
+		}
+	}
+
+	.home_intro_div {
+		padding: 20px 45% 30px 7%;
+	}
+
+	.home_intro_image_desktop {
+		position: absolute;
+
+		right: 0;
+		overflow: visible;
+		height: 50%;
+	}
+
+	// Main  and Articles Section desktop styles.
+	.main__section,
+	.articles__section {
+		.main__intro,
+		.article__heading {
+			padding: 50px 50% 30px 7%;
+		}
+
+		.main__body {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			column-gap: 1.5vw;
+		}
+
+		.main__body {
+			padding: 0 7% 30px 7%;
+		}
+
+		.articles__body {
+			display: flex;
+			flex-direction: row;
+			gap: 1.5vw;
+		}
+	}
+} // End of Desktop Styles.
+
+// Tablet mode
+@media screen and (min-width: 529px) and (max-width: 840px) {
+	.nav_grid_container ul li a,
+	button {
+		font-size: 2vw;
+	}
+
+	.invite_btn {
+		width: 15vw;
+	}
+}
+
+// ********************* Footer Styles *********************
+.footer {
+	background-color: $DarkBlue;
+}
+
+.social_media_icons {
+	display: grid;
+	grid-template-columns: 25px 25px 25px 25px 25px;
+}
+
+.copyright,
+.copyright a {
+	color: $GrayishBlue;
+}
+
+.footer__nav li a {
+	color: $White;
+}
+
+.copyright a:hover,
+.footer__nav a:hover,
+.articles__section h3:hover,
+.social_media_icons svg {
+	cursor: pointer;
+	color: $LimeGreen;
+}
+
+.social_media_icons svg path:hover {
+	fill: $LimeGreen;
+}
+
+// Mobile mode -- footer
+@media screen and (max-width: 529px) {
+	.footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.footer__logo img {
+			margin-top: 50px;
+			width: 200px;
+		}
+
+		.social_media_icons {
+			column-gap: 1rem;
+			margin-top: 25px;
+		}
+
+		.footer__nav {
+			text-align: center;
+			color: $White;
+			margin-top: 25px;
+			ul {
+				margin: 0;
+				padding: 0;
+				li:not(:last-child) {
+					margin: 0 0 15px 0;
+				}
+			}
+		}
+
+		.invite_btn {
+			margin: 25px 0 0;
+		}
+
+		.copyright {
+			text-align: center;
+			margin: 25px 7% 15px 7%;
+			color: $GrayishBlue;
+
+			div {
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+// Desktop mode -- footer
+@media screen and (min-width: 529px) {
+	.footer__logo {
+		grid-area: footer_logo;
+	}
+	.social_media_icons {
+		grid-area: social_media;
+		column-gap: 0.5rem;
+	}
+	.footer__nav {
+		grid-area: footer_nav;
+	}
+	.invite_btn {
+		grid-area: request_invite;
+	}
+	.copyright {
+		grid-area: copyright;
+	}
+
+	.footer {
+		display: grid;
+		grid-template-areas:
+			'footer_logo footer_nav footer_nav request_invite'
+			'social_media footer_nav footer_nav copyright';
+		padding: 2% 7%;
+		gap: 2vw;
+
+		.invite_btn {
+			justify-self: end;
+		}
+
+		.copyright {
+			justify-self: end;
+		}
+	}
+
+	.footer__nav {
+		.about {
+			grid-area: about;
+		}
+		.careers {
+			grid-area: careers;
+		}
+		.contact {
+			grid-area: contact;
+		}
+		.support {
+			grid-area: support;
+		}
+		.blog {
+			grid-area: blog;
+		}
+		.privacy {
+			grid-area: privacy;
+		}
+
+		ul {
+			display: grid;
+			grid-template-areas:
+				'about careers'
+				'contact support'
+				'blog privacy';
+			margin: 0;
+			gap: 2vw;
+		}
+	}
+}
