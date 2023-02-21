@@ -3,6 +3,7 @@ import closeBtn from '../images/icon-close.svg';
 import logo from '../images/logo.svg';
 import RequestBtn from './RequestBtn';
 import { useState } from 'react';
+import React from 'react';
 
 function Header() {
 	const [imageURL, setImageURL] = useState(hamburger);
@@ -24,9 +25,8 @@ function Header() {
 			if (link.style.animation) {
 				link.style.animation = '';
 			} else {
-				link.style.animation = `navLinkFade 0.5s ease forwards ${
-					index / 7 + 1.2
-				}s`;
+				link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 +
+					1.2}s`;
 			}
 		});
 	};

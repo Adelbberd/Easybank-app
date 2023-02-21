@@ -1,6 +1,7 @@
 import introMobileImg from '../images/figma-designs/figma-images/bg-intro-mobile.svg';
 import introDesktopImg from '../images/figma-designs/figma-images/easybank desktop image.svg';
 import RequestBtn from './RequestBtn';
+import React from 'react';
 
 function HomeSection() {
 	return (

@@ -1,5 +1,6 @@
 import footer_logo from '../images/figma-designs/figma-images/footer-logo.svg';
 import RequestBtn from './RequestBtn';
+import React from 'react';
 
 function Footer() {
 	return (

@@ -2,6 +2,7 @@ import currency from '../images/image-currency.jpg';
 import restaurant from '../images/image-restaurant.jpg';
 import confetti from '../images/image-confetti.jpg';
 import plane from '../images/image-plane.jpg';
+import React from 'react';
 
 function ArticleSection() {
 	return (
